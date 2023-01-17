@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Card from "./components/Card";
+import About from "./components/About";
+import Cover from "./components/Cover";
+import Footer from "./components/Footer";
+import LinkBar from "./components/LinkBar";
+import Nav from "./components/Nav";
+import Boost from "./components/Boost";
+
+const flexWrap: Object = {
+  display: "flex",
+  minHeight: "100vh",
+  flexDirection: "column",
+  justifyContent: "space-between",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <div style={flexWrap}>
+        <Cover />
+        <div style={{ backgroundColor: "#f3f3f3" }}>
+          <LinkBar />
+          <About />
+          <Card />
+          <Boost />
+          <Footer />
+        </div>
+      </div>
+    </>
   );
 }
 
