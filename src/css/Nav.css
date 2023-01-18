@@ -56,6 +56,7 @@ nav {
 .align-right {
   position: absolute;
   right: 0;
+  padding-top: 2px;
 }
 .sign-up-btn {
   width: 100px;
@@ -78,7 +79,7 @@ nav {
   display: none;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 785px) {
   .nav-container {
     max-width: var(--containerWidthDesktop);
     margin: 0 auto;
@@ -107,7 +108,7 @@ nav {
     border-radius: 10px;
     text-align: center;
     position: absolute;
-    top: 32%;
+    top: 220px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;

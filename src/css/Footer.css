@@ -1,7 +1,7 @@
 .footer-container {
   max-width: var(--containerWidthDesktop);
   margin: 0 auto;
-  padding: 100px 5rem 100px 5rem;
+  padding: 100px 5rem 50px 5rem;
   justify-content: center;
 }
 
@@ -59,7 +59,7 @@
   font-size: 12px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 785px) {
   .footer-container {
     padding: 50px 0 50px 0;
     justify-content: center;

@@ -1,18 +1,28 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Nav.css";
 import logo from "../img/logo.svg";
 import { FaBars } from "react-icons/fa";
 
 const Nav = () => {
-  const [showLinks, setShowLinks] = useState<string>("none");
+  const [navDisplay, setnavDisplay] = useState<string>("none");
+
+  useEffect(() => {
+    const handleResize = () => {
+      let windowWidth: number = window.innerWidth;
+      if (windowWidth >= 785) setnavDisplay("none");
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleButton = () => {
-    if (showLinks == "flex") {
-      setShowLinks("none");
-      console.log(showLinks);
+    if (navDisplay === "flex") {
+      setnavDisplay("none");
     } else {
-      setShowLinks("flex");
-      console.log(showLinks);
+      setnavDisplay("flex");
     }
   };
 
@@ -30,7 +40,7 @@ const Nav = () => {
         </div>
       </nav>
       <>
-        <div className="nav-mobile-box" style={{ display: `${showLinks}` }}>
+        <div className="nav-mobile-box" style={{ display: `${navDisplay}` }}>
           <a href="/#features">Features</a>
           <a href="/#pricing">Pricing</a>
           <a href="/#resources">Resources</a>
